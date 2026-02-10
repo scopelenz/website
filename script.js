@@ -1,48 +1,26 @@
-/* ========================================
-   Personal Website — Scripts
-   ======================================== */
-
-// Scroll-reveal: fade in sections as they enter the viewport
 document.addEventListener('DOMContentLoaded', () => {
-  // Mark sections for reveal
-  const sections = document.querySelectorAll('.about, .now, .connect');
-  sections.forEach(section => section.classList.add('reveal'));
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-content');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
 
-  // Stagger the now-cards animation
-  const cards = document.querySelectorAll('.now-card');
-  const cardObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }, index * 120);
-          cardObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+      tab.classList.add('active');
+      document.getElementById('tab-' + target).classList.add('active');
 
-  cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    cardObserver.observe(card);
+      // Update URL hash without scrolling
+      history.replaceState(null, '', '#' + target);
+    });
   });
+
+  // Restore tab from URL hash on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const target = document.querySelector('[data-tab="' + hash + '"]');
+    if (target) target.click();
+  }
 });
