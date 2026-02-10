@@ -4,135 +4,180 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wilson Tang</title>
-  <meta name="description" content="Wilson Tang">
+  <meta name="description" content="Wilson Tang — Trust & Safety Leader based in London.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon: replace with your own -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
 </head>
 <body>
-  <div class="grain"></div>
 
-  <main>
-    <!-- ===== HERO ===== -->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-inner">
-        <p class="greeting">Hi, I'm</p>
-        <h1 class="name">
-          Wilson Tang
-        </h1>
-        <p class="tagline">
-          Trust & Safety Leader
-        </p>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <h1>Wilson Tang</h1>
+      <p class="tagline">Trust & Safety Leader. Based in London.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/kwankitang/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:kwankitang@gmail.com">Email</a>
       </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="home">Home</button>
+      <button class="tab" data-tab="about">About</button>
+      <button class="tab" data-tab="flights">Flights</button>
+    </nav>
+
+    <!-- ===== HOME TAB ===== -->
+    <section id="tab-home" class="tab-content active">
+      <p>
+        I'm a tech policy & product leader. I completed my MPA at
+        <a href="https://www.columbia.edu" target="_blank" rel="noopener">Columbia University</a>
+        and have spent my career at the intersection of technology, product, and policy.
+      </p>
+      <p>
+        Currently <strong>Head of Trust and Safety</strong> at
+        <a href="#" target="_blank" rel="noopener">Zora</a>, building the most trusted
+        platform for trading in the attention markets.
+      </p>
+      <p>
+        Outside work I enjoy travelling, cycling, and rock-climbing. I care deeply about
+        ESEA & LGBTQ representation and am always looking for ways to support these communities.
+      </p>
+
+      <div class="detail-row">
+        <span class="label">Location</span>
+        <span>London, GB</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Interests</span>
+        <span>Online & youth safety, open-source tools, mentorship</span>
+      </div>
+      <p class="updated">Last updated February 2026</p>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="about" aria-label="About">
-      <div class="section-inner">
-        <div class="about-content">
-          <div class="about-photo-wrapper">
-            <!-- TODO: Replace with your photo. Recommended: square crop, ~400x400px -->
-            <div class="about-photo-placeholder" aria-label="Your photo goes here">
-              <span>your<br>photo</span>
-            </div>
-            <!-- Uncomment and use this instead once you have a photo: -->
-            <!-- <img src="photo.jpg" alt="Your Name" class="about-photo"> -->
-          </div>
-          <div class="about-text">
-            <h2>About</h2>
-            <p>
-              <!-- TODO: Write 2-3 sentences about yourself -->
-              I'm a tech policy & product leader based in London. I completed my MPA at
-              <a href="https://www.columbia.edu" target="_blank" rel="noopener">Columbia University</a>
-              and have spent my career working at the intersection of technology, product and policy
-            </p>
-            <p>
-              <!-- TODO: Add a personal touch — hobbies, interests, what drives you -->
-              Outside of work, I enjoy travelling, cycling, and rock-climbing. I care deeply
-              about LGBTQ+ & ESEA representation and am always looking for ways to support these communities.
-            </p>
-          </div>
+    <!-- ===== ABOUT TAB ===== -->
+    <section id="tab-about" class="tab-content">
+
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Head of Trust and Safety</strong>
+          <span class="entry-date">2024 – Present</span>
+        </div>
+        <div class="entry-org">Zora</div>
+        <p>Leading trust, safety, and content policy for the attention markets platform.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Global Head of Policy, Comments</strong>
+          <span class="entry-date"><!-- TODO: e.g. 2021 --> – 2024</span>
+        </div>
+        <div class="entry-org">TikTok</div>
+        <p>Led global policy for comments across the platform, building safety systems and policy frameworks over 3+ years.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Global Product Policy Manager</strong>
+          <span class="entry-date"><!-- TODO: dates --></span>
+        </div>
+        <div class="entry-org">TikTok</div>
+        <p><!-- TODO: description --></p>
+      </div>
+      <!-- TODO: Add any earlier roles (pre-TikTok). LinkedIn had additional positions redacted. -->
+
+      <h2>Volunteering</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Community Volunteer</strong>
+          <span class="entry-date">2017 – 2021</span>
+        </div>
+        <div class="entry-org">Singapore Heritage Society</div>
+        <p>Built tech products supporting heritage conservation initiatives.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>English Second Language Teacher</strong>
+          <span class="entry-date">Jun – Aug 2015</span>
+        </div>
+        <div class="entry-org">Summerbridge Hong Kong</div>
+        <p>Taught economics to underprivileged students.</p>
+      </div>
+
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Master of Public Administration (MPA)</strong>
+          <span class="entry-date">2015 – 2017</span>
+        </div>
+        <div class="entry-org">Columbia University — Dual Degree with Lee Kuan Yew School of Public Policy, NUS</div>
+      </div>
+      <!-- TODO: Add undergraduate degree (2012–2015, institution redacted on LinkedIn) -->
+
+      <h2>Certifications</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Cybersecurity Fundamentals</strong>
+          <span class="entry-date">2022</span>
+        </div>
+        <div class="entry-org">edX</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Digital Product Management Specialization</strong>
+          <span class="entry-date">2020</span>
+        </div>
+        <div class="entry-org">University of Virginia, Darden School of Business</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <strong>Agile Development Specialization</strong>
+          <span class="entry-date">2020</span>
+        </div>
+        <div class="entry-org">University of Virginia, Darden School of Business</div>
+      </div>
+
+      <h2>Languages</h2>
+      <p>English (Native) · Mandarin (Native) · Cantonese (Professional)</p>
+
+    </section>
+
+    <!-- ===== FLIGHTS TAB ===== -->
+    <section id="tab-flights" class="tab-content">
+
+      <h2>Flight Log</h2>
+      <p>My travel history via <a href="https://www.flightyapp.com/" target="_blank" rel="noopener">Flighty</a>.</p>
+
+      <div class="flighty-stats">
+        <!-- TODO: Paste your Flighty stats screenshot or text export here -->
+        <div class="flighty-placeholder">
+          Paste your Flighty year-in-review or lifetime stats here.
         </div>
       </div>
-    </section>
 
-    <!-- ===== NOW ===== -->
-    <section class="now" aria-label="What I'm doing now">
-      <div class="section-inner">
-        <h2>Now</h2>
-        <p class="now-subtitle">What I'm currently up to</p>
-        <div class="now-cards">
-          <div class="now-card">
-            <span class="now-label">Working at</span>
-            <p class="now-value">
-              <!-- TODO: Replace with your current company and role -->
-              Head of Trust and Safety at <a href="https://zora.co" target="_blank" rel="noopener">Zora</a>
-            </p>
-            <p class="now-detail">
-              <!-- TODO: One sentence about what you do there -->
-              Building the most trusted platform for trading in the attention markets.
-            </p>
-          </div>
-          <div class="now-card">
-            <span class="now-label">Based in</span>
-            <p class="now-value">
-              <!-- TODO: Replace with your city -->
-              London, GB
-            </p>
-          </div>
-          <div class="now-card">
-            <span class="now-label">Interested in</span>
-            <p class="now-value">
-              <!-- TODO: Replace with your interests -->
-              AI safety, human-reinforced machine learning & LLM governance
-            </p>
-          </div>
-        </div>
-        <p class="now-updated">
-          <!-- TODO: Update this date when you edit the section -->
-          Last updated February 2026
-        </p>
+      <h2>Photos</h2>
+      <div class="photo-grid">
+        <!-- TODO: Add photos. Replace src with your image paths. -->
+        <!--
+        <figure>
+          <img src="photos/example.jpg" alt="Description">
+          <figcaption>Location — Date</figcaption>
+        </figure>
+        -->
+        <div class="photo-placeholder">Add travel photos here.</div>
       </div>
+
     </section>
 
-    <!-- ===== CONNECT ===== -->
-    <section class="connect" aria-label="Connect">
-      <div class="section-inner">
-        <h2>Let's connect</h2>
-        <p>I'm always open to interesting conversations and new opportunities.</p>
-        <div class="links">
-          <!-- TODO: Replace # with your actual LinkedIn URL -->
-          <a href="https://www.linkedin.com/in/kwankitang/" target="_blank" rel="noopener" class="link-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <!-- TODO: Replace with your email -->
-          <a href="mailto:kwankitang@gmail.com" class="link-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            Email
-          </a>
-          <!-- Optional: Uncomment any of these you want to include -->
-          <!--
-          <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener" class="link-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-            X / Twitter
-          </a>
-          <a href="https://github.com/yourhandle" target="_blank" rel="noopener" class="link-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            GitHub
-          </a>
-          -->
-        </div>
-      </div>
-    </section>
-  </main>
+    <footer>
+      <p>&copy; 2026 Wilson Tang</p>
+    </footer>
 
-  <footer>
-    <p>&copy; 2026 Your Name</p>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
