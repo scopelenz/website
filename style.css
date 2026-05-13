@@ -265,6 +265,17 @@ header h1 {
   color: #fff;
 }
 
+.project-logo--ride {
+  background: #1B7F3E;
+}
+
+.project-logo--ride .project-logo-text {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
 .project-info {
   flex: 1;
   min-width: 0;
