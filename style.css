@@ -1,6 +1,5 @@
 /* ========================================
    Wilson Tang — Personal Site
-   Minimal, text-focused layout
    ======================================== */
 
 *, *::before, *::after {
@@ -13,11 +12,12 @@
   --color-bg: #ffffff;
   --color-text: #111111;
   --color-text-secondary: #555555;
-  --color-accent: #0969da;
-  --color-border: #d1d5db;
+  --color-accent: #111111;
+  --color-border: #e5e7eb;
   --color-surface: #f6f8fa;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --max-width: 640px;
+  --topbar-height: 52px;
 }
 
 html {
@@ -31,6 +31,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  padding-top: var(--topbar-height);
 }
 
 a:focus-visible,
@@ -46,12 +47,109 @@ button:focus-visible {
 }
 
 a {
-  color: var(--color-accent);
-  text-decoration: none;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-underline-offset: 2px;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration-color: var(--color-text);
+}
+
+/* ========================================
+   TOP BAR
+   ======================================== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-height);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.topbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: opacity 0.15s;
+}
+
+.topbar-name:hover {
+  text-decoration: none;
+  opacity: 0.65;
+}
+
+.topbar-logo {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.topbar-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin-ring 16s linear infinite;
+}
+
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-ring { animation: none; }
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topbar-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+  padding: 4px 0;
+}
+
+.topbar-link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.topbar-link.active {
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 /* ========================================
@@ -60,27 +158,40 @@ a:hover {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 60px 24px 40px;
+  padding: 0 24px 60px;
 }
 
 /* ========================================
-   HEADER
+   HERO (Home tab)
    ======================================== */
-header {
-  margin-bottom: 32px;
+.hero {
+  padding: 56px 0 48px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 40px;
 }
 
-header h1 {
-  font-size: 1.75rem;
+.hero-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  margin-bottom: 6px;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
-.tagline {
+.hero .tagline {
   color: var(--color-text-secondary);
-  font-size: 1rem;
-  margin-bottom: 14px;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
 }
 
 .social-links {
@@ -91,43 +202,13 @@ header h1 {
 
 .social-links a {
   color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
 }
 
 .social-links a:hover {
-  color: var(--color-accent);
-}
-
-/* ========================================
-   TAB NAVIGATION
-   ======================================== */
-.tabs {
-  display: flex;
-  gap: 0;
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: 32px;
-}
-
-.tab {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 10px 16px;
-  font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
-  margin-bottom: -1px;
-}
-
-.tab:hover {
   color: var(--color-text);
-}
-
-.tab.active {
-  color: var(--color-accent);
-  border-bottom-color: var(--color-accent);
+  text-decoration: none;
 }
 
 /* ========================================
@@ -143,7 +224,7 @@ header h1 {
 }
 
 @keyframes tab-fade {
-  from { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -152,7 +233,7 @@ header h1 {
 }
 
 .tab-content p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: var(--color-text);
 }
 
@@ -160,47 +241,32 @@ header h1 {
   margin-bottom: 0;
 }
 
-/* ========================================
-   HOME — DETAIL ROWS
-   ======================================== */
-.detail-row {
-  display: flex;
-  gap: 12px;
-  padding: 8px 0;
-  border-top: 1px solid var(--color-border);
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-.detail-row:first-of-type {
-  margin-top: 20px;
-}
-
-.label {
-  color: var(--color-text-secondary);
-  min-width: 90px;
-  flex-shrink: 0;
+/* Non-home tabs get top spacing */
+#tab-about,
+#tab-projects,
+#tab-travel {
+  padding-top: 48px;
 }
 
 .updated {
   font-size: 0.8rem;
   color: var(--color-text-secondary);
-  margin-top: 20px;
+  margin-top: 24px;
   font-style: italic;
 }
 
 /* ========================================
-   ABOUT — ENTRIES (Experience, Education, Awards)
+   ABOUT — ENTRIES
    ======================================== */
 .tab-content h2 {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--color-text-secondary);
-  margin-top: 32px;
-  margin-bottom: 16px;
-  padding-bottom: 6px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -209,7 +275,8 @@ header h1 {
 }
 
 .entry {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  padding-left: 0;
 }
 
 .entry-header {
@@ -220,6 +287,11 @@ header h1 {
   gap: 8px;
 }
 
+.entry-header strong {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 .entry-date {
   font-size: 0.85rem;
   color: var(--color-text-secondary);
@@ -228,19 +300,15 @@ header h1 {
 
 .entry-org {
   color: var(--color-text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 4px;
+  font-size: 0.875rem;
+  margin-top: 2px;
+  margin-bottom: 6px;
 }
 
 .entry p {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
-}
-
-.placeholder {
-  color: var(--color-text-secondary);
-  font-style: italic;
-  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 /* ========================================
@@ -251,24 +319,25 @@ header h1 {
   align-items: center;
   gap: 16px;
   border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 16px;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s, border-color 0.2s;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
 }
 
 .project-card:hover {
   text-decoration: none;
-  border-color: #bbb;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-color: #c8ccd1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transform: translateY(-1px);
 }
 
 .project-logo {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   background: #722F37;
   border-radius: 12px;
   display: flex;
@@ -278,7 +347,7 @@ header h1 {
 
 .project-logo-text {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
 }
@@ -289,7 +358,7 @@ header h1 {
 
 .project-logo--ride .project-logo-text {
   font-family: Inter, system-ui, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
@@ -302,7 +371,8 @@ header h1 {
 .project-info strong {
   display: block;
   font-size: 0.95rem;
-  margin-bottom: 2px;
+  font-weight: 600;
+  margin-bottom: 3px;
 }
 
 .project-info p {
@@ -314,46 +384,39 @@ header h1 {
 
 .project-tag {
   flex-shrink: 0;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: #1a7f37;
-  background: #dafbe1;
+  color: #555;
+  background: #f0f0f0;
   padding: 3px 10px;
-  border-radius: 12px;
+  border-radius: 20px;
   align-self: flex-start;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 /* ========================================
-   FLIGHTS — FLIGHTY & PHOTOS
+   FLIGHTS
    ======================================== */
 .flight-map {
-  margin-bottom: 32px;
-  border-radius: 8px;
+  margin-bottom: 40px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--color-border);
 }
 
 .flight-map iframe {
   width: 100%;
-  height: 500px;
+  height: 480px;
   border: none;
   display: block;
-}
-
-.flighty-stats {
-  margin-bottom: 32px;
-}
-
-.flighty-stats img {
-  max-width: 100%;
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
 }
 
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .photo-grid figure {
@@ -368,7 +431,7 @@ header h1 {
 }
 
 .photo-grid figcaption {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-text-secondary);
   margin-top: 6px;
 }
@@ -377,7 +440,7 @@ header h1 {
    FOOTER
    ======================================== */
 footer {
-  margin-top: 60px;
+  margin-top: 64px;
   padding-top: 20px;
   border-top: 1px solid var(--color-border);
   font-size: 0.8rem;
@@ -388,17 +451,35 @@ footer {
    RESPONSIVE
    ======================================== */
 @media (max-width: 480px) {
+  .topbar-inner {
+    padding: 0 16px;
+  }
+
+  .topbar-nav {
+    gap: 18px;
+  }
+
+  .topbar-link {
+    font-size: 0.825rem;
+  }
+
   .container {
-    padding: 40px 16px 32px;
+    padding: 0 16px 48px;
   }
 
-  header h1 {
-    font-size: 1.5rem;
+  .hero {
+    padding: 40px 0 36px;
+    margin-bottom: 32px;
   }
 
-  .tab {
-    padding: 10px 12px;
-    font-size: 0.85rem;
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  #tab-about,
+  #tab-projects,
+  #tab-travel {
+    padding-top: 36px;
   }
 
   .entry-header {
@@ -407,7 +488,7 @@ footer {
   }
 
   .flight-map iframe {
-    height: 300px;
+    height: 280px;
   }
 
   .photo-grid {

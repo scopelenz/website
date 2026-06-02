@@ -1,29 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.tab');
+  const navLinks = document.querySelectorAll('[data-tab]');
   const panels = document.querySelectorAll('.tab-content');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
+  function activateTab(tabName) {
+    panels.forEach(p => p.classList.remove('active'));
+    navLinks.forEach(l => l.classList.remove('active'));
 
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      panels.forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById('tab-' + tabName);
+    if (panel) panel.classList.add('active');
 
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      document.getElementById('tab-' + target).classList.add('active');
+    document.querySelectorAll('[data-tab="' + tabName + '"]').forEach(l => l.classList.add('active'));
 
-      history.replaceState(null, '', '#' + target);
+    history.replaceState(null, '', '#' + tabName);
+    window.scrollTo(0, 0);
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      activateTab(link.dataset.tab);
     });
   });
 
   // Restore tab from URL hash on load
   const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    const target = document.querySelector('[data-tab="' + hash + '"]');
-    if (target) target.click();
+  if (hash && document.getElementById('tab-' + hash)) {
+    activateTab(hash);
   }
 });

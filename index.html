@@ -7,7 +7,7 @@
   <meta name="description" content="Wilson Tang — Trust & Safety Leader based in London.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='66' font-family='system-ui,sans-serif' font-size='48' font-weight='600' fill='white' text-anchor='middle'>WT</text></svg>">
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
@@ -15,28 +15,43 @@
 </head>
 <body>
 
+  <!-- Top bar -->
+  <div class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a href="#home" class="topbar-name active" data-tab="home">
+        <span class="topbar-logo" aria-hidden="true">
+          <svg viewBox="0 0 100 100" class="topbar-ring">
+            <defs>
+              <path id="ring-path" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1,-76,0"/>
+            </defs>
+            <text>
+              <textPath href="#ring-path" font-size="13" font-weight="600" letter-spacing="1.5" fill="currentColor" font-family="Inter,sans-serif">WILSON TANG · WILSON TANG · </textPath>
+            </text>
+          </svg>
+        </span>
+        <span>Wilson Tang</span>
+      </a>
+      <nav class="topbar-nav" aria-label="Main navigation">
+        <a href="#about" class="topbar-link" data-tab="about">About</a>
+        <a href="#travel" class="topbar-link" data-tab="travel">Travel</a>
+        <a href="#projects" class="topbar-link" data-tab="projects">Projects</a>
+      </nav>
+    </div>
+  </div>
+
   <div class="container">
 
-    <!-- Header -->
-    <header>
-      <h1>Wilson Tang</h1>
-      <p class="tagline">Trust & Safety Leader. Based in London.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/kwankitang/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:kwankitang@gmail.com">Email</a>
-      </div>
-    </header>
-
-    <!-- Tab Navigation -->
-    <nav class="tabs" role="tablist" aria-label="Site sections">
-      <button class="tab active" role="tab" id="tab-btn-home" data-tab="home" aria-selected="true" aria-controls="tab-home">Home</button>
-      <button class="tab" role="tab" id="tab-btn-about" data-tab="about" aria-selected="false" aria-controls="tab-about">About</button>
-      <button class="tab" role="tab" id="tab-btn-projects" data-tab="projects" aria-selected="false" aria-controls="tab-projects">Projects</button>
-      <button class="tab" role="tab" id="tab-btn-flights" data-tab="flights" aria-selected="false" aria-controls="tab-flights">Flights</button>
-    </nav>
-
     <!-- ===== HOME TAB ===== -->
-    <section id="tab-home" role="tabpanel" aria-labelledby="tab-btn-home" class="tab-content active" tabindex="0">
+    <section id="tab-home" role="tabpanel" aria-label="Home" class="tab-content active">
+      <div class="hero">
+        <img src="photos/hero.png" alt="Wilson Tang" class="hero-photo">
+        <h1>Wilson Tang</h1>
+        <p class="tagline">Trust & Safety Leader. Based in London.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/kwankitang/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:kwankitang@gmail.com">Email</a>
+        </div>
+      </div>
       <p>
         I'm a tech policy & product leader. I completed my MPA at
         Columbia University and have spent my career working at the intersection of
@@ -46,13 +61,13 @@
         My experience spans trust & safety and tech policy across Zora, TikTok, and the Singapore Government.
       </p>
       <p>
-        Outside work I serve on the board of <a href="http://rainbowasia.org" target="_blank" rel="noopener">RainbowAsia</a> and enjoy building things. Having lived across Singapore, Hong Kong, New York, and London, I travel often — check out my flight log in the Flights tab.
+        Outside work I serve on the board of <a href="http://rainbowasia.org" target="_blank" rel="noopener">RainbowAsia</a> and enjoy building things. Having lived across Singapore, Hong Kong, New York, and London, I travel often — check out my travel log in the Travel tab.
       </p>
       <p class="updated">Last updated May 2026</p>
     </section>
 
     <!-- ===== ABOUT TAB ===== -->
-    <section id="tab-about" role="tabpanel" aria-labelledby="tab-btn-about" class="tab-content" tabindex="0">
+    <section id="tab-about" role="tabpanel" aria-label="About" class="tab-content">
 
       <h2>Professional</h2>
       <div class="entry">
@@ -70,6 +85,7 @@
         <div class="entry-org">TikTok</div>
         <p>Shaped product strategy and policy development for comments and interactions for 1B+ users, managing a team of policy analysts.</p>
       </div>
+
       <div class="entry">
         <div class="entry-header">
           <strong>Public Service Leadership Programme</strong>
@@ -77,6 +93,7 @@
         <div class="entry-org">Singapore Government</div>
         <p>Previously held policy and strategy roles across the Cyber Security Agency, Ministry of Manpower, and Smart Nation and Digital Government Office. First Government secondee to LinkedIn's Economic Graph team.</p>
       </div>
+
       <div class="entry">
         <div class="entry-header">
           <strong>Master of Public Administration</strong>
@@ -112,7 +129,7 @@
     </section>
 
     <!-- ===== PROJECTS TAB ===== -->
-    <section id="tab-projects" role="tabpanel" aria-labelledby="tab-btn-projects" class="tab-content" tabindex="0">
+    <section id="tab-projects" role="tabpanel" aria-label="Projects" class="tab-content">
 
       <a href="https://pour.wilsonktang.com" target="_blank" rel="noopener" class="project-card">
         <div class="project-logo">
@@ -138,8 +155,8 @@
 
     </section>
 
-    <!-- ===== FLIGHTS TAB ===== -->
-    <section id="tab-flights" role="tabpanel" aria-labelledby="tab-btn-flights" class="tab-content" tabindex="0">
+    <!-- ===== TRAVEL TAB ===== -->
+    <section id="tab-travel" role="tabpanel" aria-label="Travel" class="tab-content">
 
       <h2>Flight Map</h2>
       <div class="flight-map">
