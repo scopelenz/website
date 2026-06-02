@@ -28,15 +28,15 @@
     </header>
 
     <!-- Tab Navigation -->
-    <nav class="tabs">
-      <button class="tab active" data-tab="home">Home</button>
-      <button class="tab" data-tab="about">About</button>
-      <button class="tab" data-tab="projects">Projects</button>
-      <button class="tab" data-tab="flights">Flights</button>
+    <nav class="tabs" role="tablist" aria-label="Site sections">
+      <button class="tab active" role="tab" id="tab-btn-home" data-tab="home" aria-selected="true" aria-controls="tab-home">Home</button>
+      <button class="tab" role="tab" id="tab-btn-about" data-tab="about" aria-selected="false" aria-controls="tab-about">About</button>
+      <button class="tab" role="tab" id="tab-btn-projects" data-tab="projects" aria-selected="false" aria-controls="tab-projects">Projects</button>
+      <button class="tab" role="tab" id="tab-btn-flights" data-tab="flights" aria-selected="false" aria-controls="tab-flights">Flights</button>
     </nav>
 
     <!-- ===== HOME TAB ===== -->
-    <section id="tab-home" class="tab-content active">
+    <section id="tab-home" role="tabpanel" aria-labelledby="tab-btn-home" class="tab-content active" tabindex="0">
       <p>
         I'm a tech policy & product leader. I completed my MPA at
         Columbia University and have spent my career working at the intersection of
@@ -52,7 +52,7 @@
     </section>
 
     <!-- ===== ABOUT TAB ===== -->
-    <section id="tab-about" class="tab-content">
+    <section id="tab-about" role="tabpanel" aria-labelledby="tab-btn-about" class="tab-content" tabindex="0">
 
       <h2>Professional</h2>
       <div class="entry">
@@ -112,7 +112,7 @@
     </section>
 
     <!-- ===== PROJECTS TAB ===== -->
-    <section id="tab-projects" class="tab-content">
+    <section id="tab-projects" role="tabpanel" aria-labelledby="tab-btn-projects" class="tab-content" tabindex="0">
 
       <a href="https://pour.wilsonktang.com" target="_blank" rel="noopener" class="project-card">
         <div class="project-logo">
@@ -139,7 +139,7 @@
     </section>
 
     <!-- ===== FLIGHTS TAB ===== -->
-    <section id="tab-flights" class="tab-content">
+    <section id="tab-flights" role="tabpanel" aria-labelledby="tab-btn-flights" class="tab-content" tabindex="0">
 
       <h2>Flight Map</h2>
       <div class="flight-map">
@@ -149,51 +149,51 @@
       <h2>2025 in Review</h2>
       <div class="photo-grid">
         <figure>
-          <img src="photos/beijing.jpeg" alt="Beijing">
+          <img loading="lazy" src="photos/beijing.jpeg" alt="Beijing">
           <figcaption>Beijing</figcaption>
         </figure>
         <figure>
-          <img src="photos/osaka.jpeg" alt="Osaka">
+          <img loading="lazy" src="photos/osaka.jpeg" alt="Osaka">
           <figcaption>Osaka</figcaption>
         </figure>
         <figure>
-          <img src="photos/tokyo.jpeg" alt="Tokyo">
+          <img loading="lazy" src="photos/tokyo.jpeg" alt="Tokyo">
           <figcaption>Tokyo</figcaption>
         </figure>
         <figure>
-          <img src="photos/iceland.jpeg" alt="Iceland">
+          <img loading="lazy" src="photos/iceland.jpeg" alt="Iceland">
           <figcaption>Iceland</figcaption>
         </figure>
         <figure>
-          <img src="photos/sydney.jpeg" alt="Sydney">
+          <img loading="lazy" src="photos/sydney.jpeg" alt="Sydney">
           <figcaption>Sydney</figcaption>
         </figure>
         <figure>
-          <img src="photos/sq to singapore.jpeg" alt="SQ to Singapore">
+          <img loading="lazy" src="photos/sq to singapore.jpeg" alt="SQ to Singapore">
           <figcaption>SQ to Singapore</figcaption>
         </figure>
         <figure>
-          <img src="photos/glastonbury.jpeg" alt="Glastonbury">
+          <img loading="lazy" src="photos/glastonbury.jpeg" alt="Glastonbury">
           <figcaption>Glastonbury</figcaption>
         </figure>
         <figure>
-          <img src="photos/scarborough.jpeg" alt="Scarborough">
+          <img loading="lazy" src="photos/scarborough.jpeg" alt="Scarborough">
           <figcaption>Scarborough</figcaption>
         </figure>
         <figure>
-          <img src="photos/hongkong.jpeg" alt="Hong Kong">
+          <img loading="lazy" src="photos/hongkong.jpeg" alt="Hong Kong">
           <figcaption>Hong Kong</figcaption>
         </figure>
         <figure>
-          <img src="photos/polaris to denver.jpeg" alt="Polaris to Denver">
+          <img loading="lazy" src="photos/polaris to denver.jpeg" alt="Polaris to Denver">
           <figcaption>Polaris to Denver</figcaption>
         </figure>
         <figure>
-          <img src="photos/dhaka.jpeg" alt="Dhaka">
+          <img loading="lazy" src="photos/dhaka.jpeg" alt="Dhaka">
           <figcaption>Dhaka</figcaption>
         </figure>
         <figure>
-          <img src="photos/tallinn.jpeg" alt="Tallinn">
+          <img loading="lazy" src="photos/tallinn.jpeg" alt="Tallinn">
           <figcaption>Tallinn</figcaption>
         </figure>
       </div>
