@@ -353,7 +353,7 @@ a:hover {
 }
 
 .project-logo--ride {
-  background: #1B7F3E;
+  background: #14171D;
 }
 
 .project-logo--ride .project-logo-text {
@@ -361,6 +361,7 @@ a:hover {
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.03em;
+  color: #FFB23E;
 }
 
 .project-info {
@@ -394,6 +395,22 @@ a:hover {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.project-tag--live {
+  color: #1B7F3E;
+  background: rgba(27, 127, 62, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-tag--live::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1B7F3E;
 }
 
 /* ========================================
